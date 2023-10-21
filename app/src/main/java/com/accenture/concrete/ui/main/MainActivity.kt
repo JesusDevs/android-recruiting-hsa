@@ -41,7 +41,16 @@ class MainActivity : ComponentActivity() {
                 ) {
 
                     val gitHubPagingItems: LazyPagingItems<Item> =  viewModel.gitHubRepositoryState.collectAsLazyPagingItems()
-                    LazyColumn(
+                    LazyColumn {
+                        items(gitHubPagingItems.itemSnapshotList) { repo ->
+                            repo?.let {
+                                it.name?.let { it1 -> Text(text = it1) }
+                            }
+                        }
+                    }
+
+
+                  /*  LazyColumn(
                         modifier = Modifier.padding(16.dp)
                     ) {
                         item { Spacer(modifier = Modifier.padding(4.dp)) }
@@ -49,7 +58,7 @@ class MainActivity : ComponentActivity() {
                             ItemRepo(itemEntity = gitHubPagingItems[item]!!)
                         }
 
-                    }
+                    }*/
                 }
             }
         }

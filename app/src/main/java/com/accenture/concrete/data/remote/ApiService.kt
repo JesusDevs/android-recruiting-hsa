@@ -4,6 +4,7 @@ import com.accenture.concrete.constant.ServiceConstants.API_REPOSITORY
 import com.accenture.concrete.constant.ServiceConstants.PAGE
 import com.accenture.concrete.constant.ServiceConstants.QUERY_PARAMS
 import com.accenture.concrete.constant.ServiceConstants.SORT
+import com.accenture.concrete.data.model.Item
 import com.accenture.concrete.data.model.RepositoryResponse
 import retrofit2.Response
 import retrofit2.http.GET
@@ -16,5 +17,6 @@ interface ApiService {
         @Query(QUERY_PARAMS) query: String,
         @Query(SORT) sort: String,
         @Query(PAGE) page: Int,
-    ): List<Item>
+        @Query("per_page") perPage: Int
+    ): Response<RepositoryResponse>
 }

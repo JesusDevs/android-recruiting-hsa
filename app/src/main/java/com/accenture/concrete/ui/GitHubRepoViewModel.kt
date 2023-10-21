@@ -29,7 +29,6 @@ class GitHubRepoViewModel @Inject constructor(
 
     private suspend fun getGitHubRepository() {
         getGitHubUseCase.execute(Unit)
-            .distinctUntilChanged()
             .cachedIn(viewModelScope)
             .collect {
                 _gitHubRepositoryState.value = it

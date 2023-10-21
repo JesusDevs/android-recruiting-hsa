@@ -13,7 +13,8 @@ import javax.inject.Inject
 class GitHubRepository @Inject constructor(private val apiService: ApiService) {
     fun getGitHubRepository(): Flow<PagingData<Item>> {
         return Pager(
-            config = PagingConfig(pageSize = NETWORK_PAGE_SIZE),
+            config = PagingConfig(
+                pageSize = NETWORK_PAGE_SIZE),
             pagingSourceFactory = { GitHubRepositoryPagingSource(apiService) }
         ).flow
     }
