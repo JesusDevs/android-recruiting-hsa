@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AccentureGo</string>
+    <string name="strFetchingDataFromServer">downloading</string>
+    <string name="strRetry">retry</string>
 </resources>

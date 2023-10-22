@@ -2,6 +2,7 @@ package com.accenture.concrete.data.remote
 
 import com.accenture.concrete.constant.ServiceConstants.API_REPOSITORY
 import com.accenture.concrete.constant.ServiceConstants.PAGE
+import com.accenture.concrete.constant.ServiceConstants.PER_PAGE
 import com.accenture.concrete.constant.ServiceConstants.QUERY_PARAMS
 import com.accenture.concrete.constant.ServiceConstants.SORT
 import com.accenture.concrete.data.model.Item
@@ -17,6 +18,6 @@ interface ApiService {
         @Query(QUERY_PARAMS) query: String,
         @Query(SORT) sort: String,
         @Query(PAGE) page: Int,
-        @Query("per_page") perPage: Int
+        @Query(PER_PAGE) perPage: Int
     ): Response<RepositoryResponse>
 }
