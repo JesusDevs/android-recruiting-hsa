@@ -4,11 +4,11 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.accenture.core.ui.GitHubRepoViewModel
+import com.accenture.core.ui.screen.home.GitHubRepoHomeViewModel
 import com.accenture.core.ui.screen.home.HomeScreen
 
 @Composable
-fun Navigation(mainViewModel:GitHubRepoViewModel) {
+fun Navigation(mainViewModel: GitHubRepoHomeViewModel) {
     val navController = rememberNavController()
     NavHost(
         navController = navController,

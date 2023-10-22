@@ -26,7 +26,7 @@ fun PageLoader(modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = stringResource(id = R.string.strFetchingDataFromServer),
+            text = stringResource(id = R.string.loading),
             color = MaterialTheme.colorScheme.primary,
             maxLines = 1,
             overflow = TextOverflow.Ellipsis
@@ -63,7 +63,7 @@ fun ErrorMessage(
             maxLines = 2
         )
         OutlinedButton(onClick = onClickRetry) {
-            Text(text = stringResource(id = R.string.strRetry))
+            Text(text = stringResource(id = R.string.retry))
         }
     }
 }

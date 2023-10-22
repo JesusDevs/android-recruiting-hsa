@@ -7,13 +7,12 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.accenture.core.data.model.response.Item
-import com.accenture.core.ui.GitHubRepoViewModel
 import com.accenture.core.ui.screen.home.componentes.TopBar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
-    viewModel: GitHubRepoViewModel = hiltViewModel()
+    viewModel: GitHubRepoHomeViewModel = hiltViewModel()
 ) {
     val repoPagingItems: LazyPagingItems<Item> = viewModel.gitHubRepoState.collectAsLazyPagingItems()
     Scaffold(
