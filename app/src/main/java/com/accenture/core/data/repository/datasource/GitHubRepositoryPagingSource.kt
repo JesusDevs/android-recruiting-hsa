@@ -1,4 +1,4 @@
-package com.accenture.core.data.datasource
+package com.accenture.core.data.repository.datasource
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState

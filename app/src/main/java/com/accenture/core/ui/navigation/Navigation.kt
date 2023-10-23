@@ -4,12 +4,17 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.accenture.core.ui.screen.home.GitHubRepoHomeViewModel
-import com.accenture.core.ui.screen.home.HomeScreen
+import androidx.paging.compose.LazyPagingItems
+import androidx.paging.compose.collectAsLazyPagingItems
+import com.accenture.core.data.model.response.Item
+import com.accenture.core.ui.screen.main.GitHubRepoMainViewModel
+import com.accenture.core.ui.screen.main.HomeScreen
 
 @Composable
-fun Navigation(mainViewModel: GitHubRepoHomeViewModel) {
+fun Navigation(mainViewModel: GitHubRepoMainViewModel) {
     val navController = rememberNavController()
+    val repoPagingItems: LazyPagingItems<Item> = mainViewModel.gitHubRepoState.collectAsLazyPagingItems()
+
     NavHost(
         navController = navController,
         startDestination = AppScreenNavigation.HomeScreen.route,
@@ -17,7 +22,7 @@ fun Navigation(mainViewModel: GitHubRepoHomeViewModel) {
 
         composable(route = AppScreenNavigation.HomeScreen.route) {
             HomeScreen(
-                viewModel = mainViewModel
+                repoPagingItems = repoPagingItems
             )
         }
     }

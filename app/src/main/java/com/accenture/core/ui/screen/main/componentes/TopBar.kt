@@ -1,4 +1,4 @@
-package com.accenture.core.ui.screen.home.componentes
+package com.accenture.core.ui.screen.main.componentes
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row

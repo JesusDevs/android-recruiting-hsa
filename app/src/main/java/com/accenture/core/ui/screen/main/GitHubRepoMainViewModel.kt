@@ -1,4 +1,4 @@
-package com.accenture.core.ui.screen.home
+package com.accenture.core.ui.screen.main
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -13,7 +13,7 @@ import javax.inject.Inject
 
 
 @HiltViewModel
-class GitHubRepoHomeViewModel @Inject constructor(
+class GitHubRepoMainViewModel @Inject constructor(
     private val getGitHubUseCase: GetGitHubRepositoryUseCase
 ) : ViewModel() {
 

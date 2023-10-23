@@ -1,4 +1,4 @@
-package com.accenture.core.ui.screen.home.items
+package com.accenture.core.ui.screen.main.items
 
 
 import androidx.compose.foundation.layout.*
