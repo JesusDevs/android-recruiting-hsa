@@ -1,6 +1,7 @@
 package com.accenture.core.ui.screen.main.items
 
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 
 import androidx.compose.material3.Card
@@ -17,15 +18,17 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.accenture.core.data.model.response.Item
+import com.accenture.core.data.model.response.Owner
 import com.accenture.core.ui.GitHubRepositoryApp
 
 @Composable
 fun GitHubRepositoryItem(
     repo: Item,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onClick: () -> Unit
 ) {
     Card(
-        modifier = modifier,
+        modifier = modifier.clickable { onClick },
         elevation = CardDefaults.cardElevation(
             defaultElevation = 8.dp
         )
@@ -88,8 +91,16 @@ fun BeerItemPreview() {
             name = "Item 1",
             description = "Description 1",
             cloneUrl = "https://picsum.photos/200/300?random=1",
+            pullsUrl = "https://picsum.photos/200/300?random=1",
+            owner = Owner(
+                id = 1,
+                login = "Login 1",
+                avatarUrl = "https://picsum.photos/200/300?random=1"
+            )
         )
-        GitHubRepositoryItem(repo = repo)
+        GitHubRepositoryItem(
+            repo = repo,
+            onClick = {}
+        )
     }
-
 }
