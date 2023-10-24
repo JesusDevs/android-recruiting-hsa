@@ -1,4 +1,4 @@
-package com.accenture.core.ui
+package com.accenture.core.ui.preview
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme

@@ -1,6 +1,7 @@
-package com.accenture.core.ui.screen.main.items
+package com.accenture.core.ui.screen.home.items
 
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 
 import androidx.compose.material3.Card
@@ -17,15 +18,15 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.accenture.core.data.model.response.Item
-import com.accenture.core.ui.GitHubRepositoryApp
+import com.accenture.core.ui.preview.GitHubRepositoryApp
 
 @Composable
 fun GitHubRepositoryItem(
     repo: Item,
-    modifier: Modifier = Modifier
+    onClick: () -> Unit
 ) {
     Card(
-        modifier = modifier,
+        modifier = Modifier.clickable { onClick() },
         elevation = CardDefaults.cardElevation(
             defaultElevation = 8.dp
         )
@@ -57,7 +58,7 @@ fun GitHubRepositoryItem(
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = repo.description!!,
+                    text = repo.description?:"No description",
                     fontStyle = FontStyle.Italic,
                     color = Color.LightGray,
                     modifier = Modifier.fillMaxWidth()
@@ -81,7 +82,7 @@ fun GitHubRepositoryItem(
 
 @Preview(showBackground = true)
 @Composable
-fun BeerItemPreview() {
+fun ItemPreview() {
     GitHubRepositoryApp {
         val repo = Item(
             id = 1,
@@ -89,7 +90,8 @@ fun BeerItemPreview() {
             description = "Description 1",
             cloneUrl = "https://picsum.photos/200/300?random=1",
         )
-        GitHubRepositoryItem(repo = repo)
+        GitHubRepositoryItem(repo = repo,
+            onClick = {  })
     }
 
 }

@@ -1,4 +1,4 @@
-package com.accenture.core.ui.screen.main.items
+package com.accenture.core.ui.screen.home.items
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.Image
@@ -35,7 +35,7 @@ import com.accenture.core.data.model.response.Item
 
 
 @Composable
-fun ItemRepo ( item: Item){
+fun ItemDetailRepo ( item: Item){
     Card(
         modifier = Modifier
             .padding(horizontal = 16.dp, vertical = 8.dp)
