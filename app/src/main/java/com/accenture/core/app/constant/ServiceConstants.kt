@@ -4,6 +4,7 @@ package com.accenture.core.app.constant
 object ServiceConstants {
     const val API_REPOSITORY = "search/repositories"
     const val API_ENDPOINT = "https://api.github.com/"
+    const val API_PULL = "repos/{owner}/{repository}/pulls"
     const val QUERY_PARAMS = "q"
     const val SORT = "sort"
     const val STARS = "stars"
