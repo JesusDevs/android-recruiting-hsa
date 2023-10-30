@@ -1,4 +1,4 @@
-package com.accenture.core.ui.screen.home
+package com.accenture.core.ui.screen.home.items
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
@@ -10,11 +10,6 @@ import androidx.compose.ui.unit.dp
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
 import com.accenture.core.data.model.response.Item
-import com.accenture.core.ui.screen.home.items.ErrorMessage
-import com.accenture.core.ui.screen.home.items.GitHubRepositoryItem
-import com.accenture.core.ui.screen.home.items.LoadingNextPageItem
-import com.accenture.core.ui.screen.home.items.PageLoader
-
 
 
 @Composable

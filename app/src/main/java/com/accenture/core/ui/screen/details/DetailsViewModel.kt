@@ -25,7 +25,6 @@ class DetailsViewModel @Inject constructor(
     private val ownerLogin: String = savedStateHandle.get<String>(NavArg.OwnerLogin.key) ?: "octocat"
 
 
-
     private val _gitHubPullState: MutableStateFlow<PagingData<PullRequest>>
     = MutableStateFlow(value = PagingData.empty())
     val gitHubPullState: MutableStateFlow<PagingData<PullRequest>>

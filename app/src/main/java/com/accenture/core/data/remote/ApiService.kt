@@ -3,9 +3,11 @@ package com.accenture.core.data.remote
 import com.accenture.core.app.constant.ServiceConstants.API_REPOSITORY
 
 import com.accenture.core.app.constant.ServiceConstants.API_PULL
+import com.accenture.core.app.constant.ServiceConstants.OWNER
 import com.accenture.core.app.constant.ServiceConstants.PAGE
 import com.accenture.core.app.constant.ServiceConstants.PER_PAGE
 import com.accenture.core.app.constant.ServiceConstants.QUERY_PARAMS
+import com.accenture.core.app.constant.ServiceConstants.REPOSITORY
 import com.accenture.core.app.constant.ServiceConstants.SORT
 import com.accenture.core.data.model.pulls.PullRequest
 import com.accenture.core.data.model.response.RepositoryResponse
@@ -25,15 +27,11 @@ interface ApiService {
     ): Response<RepositoryResponse>
 
     @GET(API_PULL)
-    fun getPullRepo(
-        @Path("owner") owner: String?,
-        @Path("repository") repo: String?,
+    suspend fun getPullRequests(
+        @Path(OWNER) owner: String,
+        @Path(REPOSITORY) repo: String,
         @Query(PAGE) page: Int,
         @Query(PER_PAGE) perPage: Int
     ): Response<List<PullRequest>>
-    @GET("repos/MisterBooo/LeetCodeAnimation/pulls")
-    suspend fun getPullRequests(
-        @Query("page") page: Int,
-        @Query("per_page") perPage: Int)
-    : Response <List<PullRequest>>
+
 }

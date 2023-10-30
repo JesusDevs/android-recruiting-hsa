@@ -8,6 +8,7 @@ import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.accenture.core.data.model.response.Item
 import com.accenture.core.ui.screen.home.component.TopBar
+import com.accenture.core.ui.screen.home.items.GitHubRepoList
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

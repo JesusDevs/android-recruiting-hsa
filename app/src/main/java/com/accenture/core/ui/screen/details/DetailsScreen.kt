@@ -8,6 +8,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.accenture.core.data.model.pulls.PullRequest
+import com.accenture.core.ui.screen.details.component.GitHubPullList
 import com.accenture.core.ui.screen.details.component.TopBarDetail
 
 @OptIn(ExperimentalMaterial3Api::class)
