@@ -1,9 +1,8 @@
 package com.accenture.core.data.model.pulls
 
-
 import com.google.gson.annotations.SerializedName
 
-data class Issue(
+data class Link(
     @SerializedName("href")
-    val href: String?
+    val href: String
 )

@@ -1,23 +1,22 @@
 package com.accenture.core.data.model.pulls
 
-
 import com.google.gson.annotations.SerializedName
 
 data class Links(
     @SerializedName("comments")
-    val comments: Comments?,
+    val comments: Link,
     @SerializedName("commits")
-    val commits: Commits?,
+    val commits: Link,
     @SerializedName("html")
-    val html: Html?,
+    val html: Link,
     @SerializedName("issue")
-    val issue: Issue?,
+    val issue: Link,
     @SerializedName("review_comment")
-    val reviewComment: ReviewComment?,
+    val reviewComment: Link,
     @SerializedName("review_comments")
-    val reviewComments: ReviewComments?,
+    val reviewComments: Link,
     @SerializedName("self")
-    val self: Self?,
+    val self: Link,
     @SerializedName("statuses")
-    val statuses: Statuses?
+    val statuses: Link
 )

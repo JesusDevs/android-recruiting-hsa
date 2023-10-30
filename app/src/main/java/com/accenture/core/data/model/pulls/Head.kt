@@ -5,13 +5,13 @@ import com.google.gson.annotations.SerializedName
 
 data class Head(
     @SerializedName("label")
-    val label: String?,
+    val label: String,
     @SerializedName("ref")
-    val ref: String?,
+    val ref: String,
     @SerializedName("repo")
-    val repo: Repository?,
+    val repo: Repo,
     @SerializedName("sha")
-    val sha: String?,
+    val sha: String,
     @SerializedName("user")
-    val user: User?
+    val user: User
 )
