@@ -24,16 +24,12 @@ interface ApiService {
         @Query(PER_PAGE) perPage: Int
     ): Response<RepositoryResponse>
 
-    @GET(API_PULL)
-    fun getPullRepo(
-        @Path("owner") owner: String?,
-        @Path("repository") repo: String?,
-        @Query(PAGE) page: Int,
-        @Query(PER_PAGE) perPage: Int
-    ): Response<List<PullRequest>>
-    @GET("repos/MisterBooo/LeetCodeAnimation/pulls")
+    @GET("repos/{owner}/{repo}/pulls")
     suspend fun getPullRequests(
+        @Path("owner") owner: String,
+        @Path("repo") repo: String,
         @Query("page") page: Int,
-        @Query("per_page") perPage: Int)
-    : Response <List<PullRequest>>
+        @Query("per_page") perPage: Int
+    ): Response<List<PullRequest>>
+
 }

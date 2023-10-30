@@ -1,4 +1,4 @@
-package com.accenture.core.ui.screen.details
+package com.accenture.core.ui.screen.details.component
 
 
 import androidx.compose.foundation.clickable

@@ -11,7 +11,7 @@ sealed class NavCommand(
     class ContentType(feature: Feature) : NavCommand(feature)
 
     class ContentTypeDetail(feature: Feature) :
-        NavCommand(feature, "detail", listOf(NavArg.RepoName,NavArg.OwnerLogin)) {
+        NavCommand(feature, "detail", listOf(NavArg.OwnerLogin,NavArg.RepoName)) {
         fun createRoute(ownerLogin: String,repoName:String) = "${feature.route}/$subRoute/$ownerLogin/$repoName"
     }
 
@@ -31,7 +31,7 @@ sealed class NavCommand(
 
 enum class NavArg(val key: String, val navType: NavType<*>) {
     OwnerLogin(key = "ownerLogin", navType= NavType.StringType),
-    RepoName("repoName", NavType.StringType)
+    RepoName(key ="repoName", navType= NavType.StringType)
 }
 enum class Feature(val route: String) {
     HOME("Home"),

@@ -20,6 +20,8 @@ class GitHubPullsPagingSource @Inject constructor(
         val currentPage = params.key ?: 1
         val response = safeApiCall {
             apiService.getPullRequests(
+                owner = pulls.owner,
+                repo = pulls.repo,
                 page = currentPage,
                 perPage = PAGE_SIZE)
         }
