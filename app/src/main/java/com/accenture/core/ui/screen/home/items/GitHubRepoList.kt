@@ -23,9 +23,11 @@ fun GitHubRepoList(
     ) {
         item { Spacer(modifier = Modifier.padding(4.dp)) }
         items(repoPagingItems.itemCount) { index ->
-            GitHubRepositoryItem(
-                repo = repoPagingItems[index]!!,
-                onClick = { onClickRepo(repoPagingItems[index]!!) })
+            repoPagingItems[index]?.let {
+                GitHubRepositoryItem(
+                    repo = it,
+                    onClick = { repoPagingItems[index]?.let { it1 -> onClickRepo(it1) } })
+            }
         }
         repoPagingItems.run {
             when {

@@ -37,13 +37,22 @@ fun GitHubRepositoryItem(
                 .height(IntrinsicSize.Max)
                 .padding(16.dp)
         ) {
+            repo.owner?.avatarUrl?.let {
             AsyncImage(
-                model = repo.owner!!.avatarUrl,
+                model = repo.owner.avatarUrl,
                 contentDescription = repo.name,
                 modifier = Modifier
                     .weight(1f)
                     .height(150.dp)
-            )
+            )}?: kotlin.run {
+                AsyncImage(
+                    model = "https://picsum.photos/200/300?random=1",
+                    contentDescription = repo.name,
+                    modifier = Modifier
+                        .weight(1f)
+                        .height(150.dp)
+                )
+            }
             Spacer(modifier = Modifier.width(16.dp))
             Column(
                 modifier = Modifier
@@ -52,7 +61,7 @@ fun GitHubRepositoryItem(
                 verticalArrangement = Arrangement.Center
             ) {
                 Text(
-                    text = repo.name!!,
+                    text = repo.name?:"No name",
                     style = MaterialTheme.typography.titleMedium,
                     modifier = Modifier.fillMaxWidth()
                 )
@@ -65,12 +74,12 @@ fun GitHubRepositoryItem(
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = repo.pullsUrl!!,
+                    text = repo.pullsUrl?:"No pulls",
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = " in ${repo.cloneUrl}",
+                    text = " in ${repo.cloneUrl?:"No clone url"}",
                     modifier = Modifier.fillMaxWidth(),
                     textAlign = TextAlign.End,
                     fontSize = 8.sp
@@ -88,7 +97,7 @@ fun ItemPreview() {
             id = 1,
             name = "Item 1",
             description = "Description 1",
-            cloneUrl = "https://picsum.photos/200/300?random=1",
+            cloneUrl = "",
         )
         GitHubRepositoryItem(repo = repo,
             onClick = {  })
